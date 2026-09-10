@@ -28,8 +28,8 @@ class MainActivity : AppCompatActivity() {
         // "Find Blood" button click listener
         btnFindBlood.setOnClickListener {
             // Abhi ke liye khali rakha hai, baad mein SearchActivity banayenge
-            // val intent = Intent(this, SearchActivity::class.java)
-            // startActivity(intent)
+             val intent = Intent(this, SearchActivity::class.java)
+             startActivity(intent)
         }
     }
 }
