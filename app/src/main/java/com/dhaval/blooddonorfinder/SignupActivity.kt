@@ -56,9 +56,9 @@ class SignupActivity : AppCompatActivity() {
                 .addOnSuccessListener {
                     Toast.makeText(this, "Account created successfully", Toast.LENGTH_SHORT).show()
                     // Signup ke baad Donor Registration screen pe bhejenge
-                    // val intent = Intent(this, DonorRegistrationActivity::class.java)
-                    // startActivity(intent)
-                    // finish()
+                    val intent = Intent(this, DonorRegistrationActivity::class.java)
+                     startActivity(intent)
+                     finish()
                 }
                 .addOnFailureListener { e ->
                     Toast.makeText(this, "Signup failed: ${e.message}", Toast.LENGTH_SHORT).show()
