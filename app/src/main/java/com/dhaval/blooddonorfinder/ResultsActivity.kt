@@ -8,10 +8,11 @@ import android.widget.ListView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.firestore.FirebaseFirestore
-
+import android.widget.TextView
 class ResultsActivity : AppCompatActivity() {
 
     private lateinit var listView: ListView
+    private lateinit var tvEmptyState: TextView
     private lateinit var db: FirebaseFirestore
 
     // Phone numbers ki list, calling ke liye alag se store karenge
@@ -42,8 +43,11 @@ class ResultsActivity : AppCompatActivity() {
                 phoneNumbers.clear()
 
                 if (documents.isEmpty) {
-                    Toast.makeText(this, "No donors found", Toast.LENGTH_SHORT).show()
+                    tvEmptyState.visibility = android.view.View.VISIBLE
+                    listView.visibility = android.view.View.GONE
                 } else {
+                    tvEmptyState.visibility = android.view.View.GONE
+                    listView.visibility = android.view.View.VISIBLE
                     for (doc in documents) {
                         val name = doc.getString("name") ?: "Unknown"
                         val phone = doc.getString("phone") ?: ""

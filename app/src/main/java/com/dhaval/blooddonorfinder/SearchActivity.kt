@@ -35,7 +35,7 @@ class SearchActivity : AppCompatActivity() {
 
         btnSearch.setOnClickListener {
             val bloodGroup = spinnerBloodGroup.selectedItem.toString()
-            val area = etArea.text.toString().trim()
+            val area = etArea.text.toString().trim().lowercase()
 
             if (bloodGroup == "Select Blood Group") {
                 Toast.makeText(this, "Please select a blood group", Toast.LENGTH_SHORT).show()

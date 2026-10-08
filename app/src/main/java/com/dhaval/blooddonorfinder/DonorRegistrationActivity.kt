@@ -53,8 +53,7 @@ class DonorRegistrationActivity : AppCompatActivity() {
         val name = etName.text.toString().trim()
         val phone = etPhone.text.toString().trim()
         val bloodGroup = spinnerBloodGroup.selectedItem.toString()
-        val area = etArea.text.toString().trim()
-
+        val area = etArea.text.toString().trim().lowercase()
         // Validation checks
         if (name.isEmpty() || phone.isEmpty() || area.isEmpty()) {
             Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show()
