@@ -41,10 +41,10 @@ class LoginActivity : AppCompatActivity() {
             auth.signInWithEmailAndPassword(email, password)
                 .addOnSuccessListener {
                     Toast.makeText(this, "Login successful", Toast.LENGTH_SHORT).show()
-                    // Login ke baad Donor Registration screen pe bhejenge
-                    // val intent = Intent(this, DonorRegistrationActivity::class.java)
-                    // startActivity(intent)
-                    // finish()
+                    val intent = Intent(this, DonorRegistrationActivity::class.java)
+                    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                    startActivity(intent)
+                    finish()
                 }
                 .addOnFailureListener { e ->
                     Toast.makeText(this, "Login failed: ${e.message}", Toast.LENGTH_SHORT).show()

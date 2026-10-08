@@ -23,6 +23,7 @@ class ResultsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_results)
 
         listView = findViewById(R.id.listViewResults)
+        tvEmptyState = findViewById(R.id.tvEmptyState)
         db = FirebaseFirestore.getInstance()
 
         // SearchActivity se bheja hua data receive karna
